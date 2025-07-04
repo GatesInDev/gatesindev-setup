@@ -1,0 +1,7 @@
+xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --output eDP1 --mode 1366x768 --pos 1920x312 &
+
+nitrogen --restore &
+picom --config ~/.config/picom/picom.conf &
+tint2 &
+xfce4-terminal &
+conky -c ~/.config/conky/conky.conf &

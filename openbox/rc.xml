@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_config xmlns="http://openbox.org/3.4/rc">
+  <theme>
+    <name>Adwaita</name> <!-- Tema claro -->
+    <titleLayout></titleLayout> <!-- Remove tudo da barra -->
+    <keepBorder>no</keepBorder>
+    <animateIconify>no</animateIconify>
+  </theme>
+
+  <desktops>
+    <number>1</number>
+    <firstdesk>1</firstdesk>
+    <popupTime>0</popupTime>
+  </desktops>
+
+  <focus>
+    <focusNew>yes</focusNew>
+    <followMouse>no</followMouse>
+    <raiseOnFocus>no</raiseOnFocus>
+    <underMouse>no</underMouse>
+    <focusLast>yes</focusLast>
+    <focusDelay>200</focusDelay>
+  </focus>
+
+  <placement>
+    <policy>Smart</policy>
+    <center>yes</center>
+    <monitor>Primary</monitor>
+    <primaryMonitor>1</primaryMonitor>
+  </placement>
+
+  <resize>
+    <drawContents>yes</drawContents>
+    <popupShow>Never</popupShow>
+    <popupPosition>Center</popupPosition>
+  </resize>
+
+  <margins>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
+  </margins>
+
+  <keyboard>
+    <!-- Terminal -->
+    <keybind key="W-Return">
+      <action name="Execute">
+        <command>xfce4-terminal</command>
+      </action>
+    </keybind>
+
+    <!-- Rofi launcher -->
+    <keybind key="W-space">
+      <action name="Execute">
+        <command>rofi -show drun</command>
+      </action>
+    </keybind>
+
+    <!-- Fechar janela -->
+    <keybind key="W-S-Q">
+      <action name="Close"/>
+    </keybind>
+
+    <!-- Snap/Max/Min -->
+    <keybind key="W-Up">
+      <action name="Maximize"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="Iconify"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>50%</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+
+    <!-- Alternar janelas -->
+    <keybind key="A-Tab">
+      <action name="NextWindow">
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+        </finalactions>
+      </action>
+    </keybind>
+
+    <!-- Alternar áreas de trabalho -->
+    <keybind key="C-A-Left">
+      <action name="GoToDesktop">
+        <to>left</to>
+      </action>
+    </keybind>
+    <keybind key="C-A-Right">
+      <action name="GoToDesktop">
+        <to>right</to>
+      </action>
+    </keybind>
+  </keyboard>
+
+  <mouse>
+  <dragThreshold>1</dragThreshold>
+  <doubleClickTime>500</doubleClickTime>
+  <screenEdgeWarpTime>0</screenEdgeWarpTime>
+  <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
+
+  <context name="Frame">
+    <!-- Alt + Botão esquerdo: mover -->
+    <mousebind button="A-Left" action="Drag">
+      <action name="UnmaximizeFull"/>
+      <action name="Move"/>
+    </mousebind>
+
+    <!-- Alt + Botão direito: redimensionar -->
+    <mousebind button="A-Right" action="Drag">
+      <action name="UnmaximizeFull"/>
+      <action name="Resize"/>
+    </mousebind>
+
+    <!-- Alt + scroll para mudar área de trabalho -->
+    <mousebind button="A-Up" action="Click">
+      <action name="GoToDesktop">
+        <to>previous</to>
+      </action>
+    </mousebind>
+    <mousebind button="A-Down" action="Click">
+      <action name="GoToDesktop">
+        <to>next</to>
+      </action>
+    </mousebind>
+  </context>
+</mouse>
+
+  
+  <applications>
+    <!-- Remove decoração de todas as janelas -->
+    <application class="*">
+      <decor>no</decor>
+    </application>
+  </applications>
+</openbox_config>
+ 
